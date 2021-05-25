@@ -7,6 +7,11 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Login from './Login';
 import { auth } from './firebase';
 import { useStateValue } from './StateProvider';
+import Payment from './Payment';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+
+const promise = loadStripe('pk_test_51IqTFHFGhtgy0dmdLsK13ocj4R4N7iPW97YDq3hw8Oh2lwobKpCwqoudEevF0Q1kSCsfXCdHfD4rEho2I7qtPWbe00IHpbIMvW');
 
 
 function App() {
@@ -17,7 +22,7 @@ function App() {
       console.log('The user is >>> ', authUser);
 
       if (authUser) {
-        // The use just logged in / the user was logged in
+        // The user just logged in / the user was logged in
         dispatch({
           type: 'SET_USER',
           user: authUser
@@ -42,6 +47,12 @@ function App() {
           <Route path='/checkout'>
             <Header />
             <Checkout />
+          </Route>
+          <Route path='/payment'>
+            <Header />
+            <Elements stripe={promise}>
+              <Payment />
+            </Elements>
           </Route>
           <Route path='/'>
             <Header />
