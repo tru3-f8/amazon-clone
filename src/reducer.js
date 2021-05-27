@@ -14,6 +14,11 @@ const reducer = (state, action) => {
         ...state,
         basket: [...state.basket, action.item],
       };
+    case 'EMPTY_BASKET':
+      return {
+        ...state,
+        basket: [],
+      };
     case 'REMOVE_FROM_BASKET':
       //Create a variable to find the index of the item in the current basket to match the item that was dispatched to the reducer 
       const index = state.basket.findIndex(

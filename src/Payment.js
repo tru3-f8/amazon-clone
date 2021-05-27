@@ -7,6 +7,7 @@ import { useStateValue } from './StateProvider';
 import CurrencyFormat from 'react-currency-format';
 import { getBasketTotal } from './reducer';
 import axios from './axios';
+import { db } from './firebase';
 
 const Payment = () => {
   const [{ basket, user }, dispatch] = useStateValue();
@@ -35,6 +36,7 @@ const Payment = () => {
     getClientSecret();
   }, [basket])
 
+  console.log('The secret is', clientSecret)
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -48,9 +50,26 @@ const Payment = () => {
     }).then(({ paymentIntent }) => {
       //PaymentIntent = payment confirmation
 
+      db 
+        .collection('users') //Get the collection named 'users'
+        .doc(user?.uid) //Get the user with that id
+        .collection('orders') //Get that user's order
+        .doc(paymentIntent.id) //Get the confirmation id
+        .set({
+          basket: basket, //Get items from basket
+          amount: paymentIntent.amount, //Get the amount
+          created: paymentIntent.created //Get the timestamp of the payment
+        })
+
+
+
       setSuccceded(true);
       setError(null);
       setProcessing(false);
+
+      dispatch({
+        type: 'EMPTY_BASKET'
+      })
 
       history.replace('/orders')
     }) 
