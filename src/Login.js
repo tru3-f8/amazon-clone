@@ -31,7 +31,7 @@ const Login = () => {
           history.push('/');
         }
       })
-      .catch((error) => alert(error.message));
+      .catch((error) => alert('Please enter an email and password to create an account.'));
   };
 
   return (
