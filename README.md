@@ -21,7 +21,6 @@ Test the "Buy Now" Button
 - moment
 - react
 - react-currency-format
-- react-dom
 - react-router-dom
 - cors
 - express
