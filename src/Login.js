@@ -51,7 +51,7 @@ const Login = () => {
           <h5>E-mail</h5>
           <input
             type='text'
-            vallue={email}
+            value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
 
