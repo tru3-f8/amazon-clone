@@ -4,7 +4,8 @@ The Amazon clone page is built with React.js, CSS, Hooks, Stripe, Express, and F
 
 
 ## Test Account
-You will need to create an account in the Amazon Clone website before purchasing to see your orders.
+Username: test@gmail.com
+Password: welcome1
 
 Test the purchasing feature using the following information.
 
