@@ -4,8 +4,8 @@ The Amazon clone page is built with React.js, CSS, Hooks, Stripe, Express, and F
 
 
 ## Test Account
-Username: test@gmail.com
-Password: welcome1
+- Username: test@gmail.com
+- Password: welcome1
 
 Test the purchasing feature using the following information.
 
