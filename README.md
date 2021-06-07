@@ -2,7 +2,11 @@
 
 The Amazon clone page is built with React.js, CSS, Hooks, Stripe, Express, and Firebase. This website has user authentication with the ability to remember your order, remove items, and purchase items using Stripe payment. Uses createContext, useContext, and useReducer from React to handle the state management that are being passed through the components. Also, it uses Firebase as the database with Express handling the communication between the front and back end. 
 
-Test the "Buy Now" Button
+
+## Test Account
+You will need to create an account in the Amazon Clone website before purchasing to see your orders.
+
+Test the purchasing feature using the following information.
 
 1. Enter 4242 4242 4242 4242 as the card number
 2. Enter any future date for card expiry
