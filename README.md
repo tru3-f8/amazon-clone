@@ -15,7 +15,7 @@ Test the purchasing feature using the following information.
 4. Enter any billing ZIP code (90210)
 5. Click the "Buy Now" button
 
-## Dependencies
+## Technologies
 
 - material-ui/core
 - material-ui/icons
